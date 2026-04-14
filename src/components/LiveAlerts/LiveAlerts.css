@@ -1,0 +1,133 @@
+.live-alerts-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.2rem;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--error);
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 51, 102, 0.1);
+  border-radius: 20px;
+}
+
+.live-indicator .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--error);
+  border-radius: 50%;
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.4); }
+  70% { box-shadow: 0 0 0 4px rgba(255, 51, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.alert-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid transparent;
+}
+
+.alert-item.alert-info { border-left-color: var(--accent-primary); }
+.alert-item.alert-promotion { border-left-color: var(--success); }
+.alert-item.alert-emergency { border-left-color: var(--warning); }
+.alert-item.alert-incentive { border-left-color: var(--accent-secondary); }
+
+.alert-icon {
+  font-size: 1.5rem;
+}
+
+.alert-content p {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.alert-time {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Incentive Engine UI */
+.incentive-card {
+  display: flex;
+  gap: 1rem;
+  background: rgba(112, 0, 255, 0.1);
+  border: 1px solid rgba(112, 0, 255, 0.3);
+  padding: 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.qr-placeholder {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incentive-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.discount-badge {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  background: var(--accent-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: max-content;
+}
+
+.target-loc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.claim-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--accent-secondary);
+  color: var(--text-primary);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  transition: background 0.2s ease;
+}
+
+.claim-btn:hover {
+  background: var(--accent-secondary);
+}
